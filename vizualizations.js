@@ -4,4 +4,5 @@ d3.select('div')
     .selectAllChildren('p')
     .data([1, 2, 3])
     .enter()
-    .append('p');
+    .append('p')
+    .text(dta => dta);
