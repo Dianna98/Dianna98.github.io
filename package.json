@@ -1,0 +1,7 @@
+{
+  "name": "Dianna98.github.io",
+  "version": "1.0.0",
+  "dependencies": {
+    "d3": "^6.6.2"
+  }
+}
