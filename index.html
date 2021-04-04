@@ -4,7 +4,7 @@
     <style>
         html * {
             font-family: Helvetica, sans-serif !important;
-            text-align: center;
+            text-align: left;
         }
     </style>
     <meta charset="UTF-8">
@@ -13,20 +13,282 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
-<h1>COMP6214 Coursework - Open Data Cleaning</h1>
-<h3><i>Author: Diana-Alexandra Crintea (dac1u17)</i></h3>
+<h1 style="text-align: center">COMP6214 Coursework - Open Data Cleaning</h1>
+<h3 style="text-align: center"><i>Author: Diana-Alexandra Crintea (dac1u17)</i></h3>
 
+<p style="text-align: center">
 <a href="index.html">Home</a>
-<p>Data Visualisations:
+</p>
+<p style="text-align: center">Data Visualisations:
     <a href="sample_size.html">Sample Size And Response Data</a> |
     <a href="trading.html">Trading Status Data</a> |
     <a href="gov_schemes.html">Government Schemes Data</a>
 </p>
 
-<p style="text-align:left"><a href="business-impacts-of-covid-19-ontology.owl">Ontology file</a>
-    : this file was created using Protégé.
-</p>
 
+<p><strong>Open Data Cleaning</strong></p>
+<p>For cleaning the dataset, I did not use any tools. I decided that being a small set of data, manually going through
+    the Microsoft Excel file would be more efficient as a first pass. Below are the errors extracted manually and the
+    transformations performed to solve them.</p>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><strong>Sheet</strong></p>
+        </td>
+        <td>
+            <p><strong>Error</strong></p>
+        </td>
+        <td>
+            <p><strong>Solution</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            <p><strong>Sample Size</strong></p>
+        </td>
+        <td>
+            <p>Spelling error &lsquo;<strong>theirsize&rsquo;</strong></p>
+        </td>
+        <td>
+            <p>Changed to &lsquo;<strong>their size</strong>&rsquo;</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The number of surveys sent out for all industries with a workforce size of 250 and over from the first
+                table shows as <strong>7181.97</strong>. This value has to be a round number.</p>
+        </td>
+        <td>
+            <p>Changed it to <strong>7181</strong> to match the value from the second table.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>In the second table, the total number of surveys sent out is <strong>17623.23</strong>. Once again, this
+                number has to be an integer.</p>
+        </td>
+        <td>
+            <p>Changed the value to <strong>17623</strong>, after making sure the values from the previous columns add
+                up to this.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            <p><strong>Response Rates</strong></p>
+        </td>
+        <td>
+            <p>The number of responses from Human Health And Social Work Activities with a workforce of 250 and over is
+                <strong>-59</strong>. This value has to be positive.</p>
+        </td>
+        <td>
+            <p><strong>Removed the minus</strong>, after checking that the values add up (85+59=144).</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The total response percentage for the Construction industry shows as <strong>217.5%</strong>. This value
+                cannot be over 100%.</p>
+        </td>
+        <td>
+            <p>Changed to <strong>27.5%</strong>, after consulting the number of responses and the sample size.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The response rate for Arts, Entertainment And Recreation with workforce under 250 is
+                <strong>-43.4%</strong>. This value has to be positive.</p>
+        </td>
+        <td>
+            <p>Removed the minus, after consulting the number of responses and the sample size.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            <p><strong>Trading Status</strong></p>
+        </td>
+        <td>
+            <p>The &lsquo;<strong>*</strong>&rsquo; symbol does not represent concrete data.</p>
+        </td>
+        <td>
+            <p>Replaced each symbol with the percentage number using the formula <strong>* = 1 &ndash; C2 &ndash;
+                C4</strong>, where C is a column from a table.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The percentage of Information And Communication Industry that has temporarily closed trading is <strong>4.51232%</strong>.
+                This has to be rounded to one decimal place.</p>
+        </td>
+        <td>
+            <p>Change this to <strong>4.5%</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            <p><strong>Government Schemes</strong></p>
+        </td>
+        <td>
+            <p>The name of the sheet does not capture the essence of the sheet data.</p>
+        </td>
+        <td>
+            <p>Changed the name to &lsquo;<strong>Government Schemes Applied For&rsquo;</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The percentage of Arts, Entertainment And Recreation that did not apply for any initiative shows as
+                <strong>1200.6%</strong>. This value has to be under 100%.</p>
+        </td>
+        <td>
+            <p>Changed this to <strong>12.6%</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The value for overall industries with a workforce size of 250 and over shows as <strong>7.3123%</strong>.
+                This value has to be rounded to one decimal place.</p>
+        </td>
+        <td>
+            <p>Changed to <strong>7.3%</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="4">
+            <p><strong>Government Schemes (2)</strong></p>
+        </td>
+        <td>
+            <p>The name of the sheet does not capture the essence of the sheet data.</p>
+        </td>
+        <td>
+            <p>Changed the name to &lsquo;<strong>Government Schemes Received</strong>&rsquo;.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Inconsistent use of shorthand &lsquo;<strong>haven&rsquo;t</strong>&rsquo; in the last column of each
+                table.</p>
+        </td>
+        <td>
+            <p>Replaced with &lsquo;<strong>have not</strong>&rsquo;.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The &lsquo;<strong>*</strong>&rsquo; symbol does not represent concrete data.</p>
+        </td>
+        <td>
+            <p>Replaced with <strong>0.0%</strong> due to not being able to calculate their value more accurately.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The symbol &lsquo;-&lsquo; inserted by mistake in &lsquo;<strong>46.1-%</strong>&rsquo;.</p>
+        </td>
+        <td>
+            <p>Changed to <strong>46.1%</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            <p><strong>Government Schemes (3)</strong></p>
+        </td>
+        <td>
+            <p>The name of the sheet does not capture the essence of the sheet data.</p>
+        </td>
+        <td>
+            <p>Changed the name to &lsquo;<strong>Government Schemes Future Plans</strong>&rsquo;.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The symbol &lsquo;+&rsquo; inserted by mistake in &rsquo;<strong>42.2+%</strong>&rsquo;.</p>
+        </td>
+        <td>
+            <p>Changed to <strong>42.2%</strong>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>The percentage for all industries that are planning to apply for the Coronavirus Job Retention Scheme
+                shows as <strong>-36.8%</strong>. This value cannot be negative.</p>
+        </td>
+        <td>
+            <p>Changed to <strong>36.8%</strong>.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p>After the manual data cleaning, I converted the Excel tables to CSV and validated the relationships between them
+    using python and the pandas library. Below is the list of validations performed, all of which have passed.</p>
+<ul>
+    <li>Sample Size
+        <ul>
+            <li>For each industry, the sum between the number of surveys sent out for workforce size under 250 and for
+                workforce size of 250 and over should be equal to the total specified.
+            </li>
+            <li>The total number of surveys sent out for all given industries per workforce size should be at least the
+                sum of the number of surveys sent out for each industry.
+            </li>
+            <li>For the BICS survey broken down by workforce size, workforce size 0-99 + workforce size 100-249 = the
+                total for all industries with workforce size &lt; 250 from the previous table.
+            </li>
+            <li>Workforce size 0-99 + workforce size 100-249 + workforce size 250+ = total number of surveys sent out
+                for all industries and all size bands.
+            </li>
+        </ul>
+    </li>
+    <li>Response Rates
+        <ul>
+            <li>The checks applied for Sample Size.</li>
+            <li>The data from the table &lsquo;Proportion of responses to the BICS survey broken down by industry&rsquo;
+                should be in accordance with the rapport from the tables &lsquo;Responses to the BICS survey broken down
+                by industry&rsquo; and &lsquo;Sample for the BICS survey broken down by industry&rsquo;.
+            </li>
+        </ul>
+    </li>
+    <li>Trading Status
+        <ul>
+            <li>For all three tables, the values from the 3 data columns should sum up to 100% &plusmn; 0.3%, to account
+                for potential errors introduced by rounding.
+            </li>
+        </ul>
+    </li>
+    <li>Government Schemes
+        <ul>
+            <li>For the first table, the number of companies from all industries (calculated as total number of
+                responses * percentage of industries which continue or have temporarily paused trading * percentage of
+                companies which have applied for certain initiative) should be at least the sum of the number of
+                companies for each industry (calculated in the same way).
+            </li>
+            <li>For the second table, using the formula presented in the previous point, the sum between workforce sizes
+                should be approximately equal to the total. A small margin is allowed due to possible errors introduced
+                by rounding.
+            </li>
+        </ul>
+    </li>
+    <li>Government Schemes (2)
+        <ul>
+            <li>The checks described for Government Schemes.</li>
+            <li>For each industry, the percentage of received initiatives should be less than the percentage applied
+                for.
+            </li>
+        </ul>
+    </li>
+    <li>Government Schemes (3)
+        <ul>
+            <li>The checks described for Government Schemes.</li>
+        </ul>
+    </li>
+</ul>
+
+
+<p style="text-align: left">The data modelling has been done using Protégé.</p>
+<p style="text-align:left"><a href="business-impacts-of-covid-19-ontology">Ontology file</a>
+</p>
+<p style="text-align:left"><a href="business-impacts-of-covid-19">Linked Data file</a>
+</p>
 
 </body>
 </html>
