@@ -1,0 +1,317 @@
+#################################################################
+###  Generated with the experimental alpha version of the TTL exporter of WebVOWL (version 1.1.7)  http://visualdataweb.de/webvowl/   ###
+#################################################################
+
+@prefix :            <http://visualdataweb.org/BusinessImpactsOfCovid-19/> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-Scheme#> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLScheme#> .
+@prefix dc:          <http://purl.org/dc/elements/1.1/> .
+@prefix xml:         <http://www.w3.org/XML/1998/namespace> .
+@prefix wot:         <http://xmlns.com/wot/0.1/> .
+@prefix vs:          <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:        <http://xmlns.com/foaf/0.1/> .
+@base <http://visualdataweb.org/BusinessImpactsOfCovid-19/> .
+
+<http://visualdataweb.org/BusinessImpactsOfCovid-19/>
+    rdf:type       owl:Ontology ;
+    dc:title       "BusinessImpactsOfCovid-19" ;
+    dc:description "New ontology description" ;
+    dc:creator     "Diana-Alexandra Crintea" .
+#################################################################
+
+###  Property Definitions (Number of Property) 31 ###
+#  --------------------------- Property 0-------------------------
+:name
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "industryName" ;
+    rdfs:domain :Industry ;
+    rdfs:range  xsd:string .
+#  --------------------------- Property 1-------------------------
+:sentOut
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "sentOut" ;
+    rdfs:domain :Surveys ;
+    rdfs:range  :Sent .
+#  --------------------------- Property 2-------------------------
+:respondedTo
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "respondedTo" ;
+    rdfs:domain :Surveys ;
+    rdfs:range  :Responded .
+#  --------------------------- Property 3-------------------------
+:numberOfResponses
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "numberOfResponses" ;
+    rdfs:domain :Responded ;
+    rdfs:range  xsd:integer .
+#  --------------------------- Property 4-------------------------
+:numberOfSurveysSent
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "numberOfSurveysSent" ;
+    rdfs:domain :Sent ;
+    rdfs:range  xsd:integer .
+#  --------------------------- Property 5-------------------------
+:responseRate
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "responseRate" ;
+    rdfs:domain :Responded ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 6-------------------------
+:hasStatus
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "hasStatus" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :TradingStatus .
+#  --------------------------- Property 7-------------------------
+:continuingPercentage
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "continuingPercentage" ;
+    rdfs:domain :TradingStatus ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 8-------------------------
+:permanentlyCeasedPercentage
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "permanentlyCeasedPercentage" ;
+    rdfs:domain :TradingStatus ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 9-------------------------
+:temporarilyCeasedPercentage
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "temporarilyCeasedPercentage" ;
+    rdfs:domain :TradingStatus ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 10-------------------------
+:hasAppliedFor
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "hasAppliedFor" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :GovSchemessAppliedFor .
+#  --------------------------- Property 11-------------------------
+:hasReceived
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "hasReceived" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :GovSchemeReceived .
+#  --------------------------- Property 12-------------------------
+:hasPlanned
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "hasPlanned" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :GovSchemesPlanned .
+#  --------------------------- Property 13-------------------------
+:trading
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "trading" ;
+    rdfs:domain :Country ;
+    rdfs:range  :TradingStatus .
+#  --------------------------- Property 14-------------------------
+:govSchemessAppliedFor
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "govSchemessAppliedFor" ;
+    rdfs:domain :Country ;
+    rdfs:range  :GovSchemessAppliedFor .
+#  --------------------------- Property 15-------------------------
+:coronavirusJobRetention
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "coronavirusJobRetention" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 16-------------------------
+:businessRatesHoliday
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "businessRatesHoliday" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 17-------------------------
+:deferringVAT
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "deferringVAT" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 18-------------------------
+:HMRCTimeToPay
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "HMRCTimeToPay" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 19-------------------------
+:smallBusinessGrant
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "smallBusinessGrant" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 20-------------------------
+:accreditedFinanceagreements
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "accreditedFinanceagreements" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 21-------------------------
+:notApplied
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:label  "notApplied" ;
+    rdfs:domain :GovSchemes ;
+    rdfs:range  xsd:double .
+#  --------------------------- Property 22-------------------------
+:hasSurveys
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "hasSurveys" ;
+    rdfs:domain :Workforce ;
+    rdfs:range  :Surveys .
+#  --------------------------- Property 23-------------------------
+:workforceUnder250
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "workforce<250" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :WorkforceUnder250 .
+#  --------------------------- Property 24-------------------------
+:workforceOver250
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "workforce250+" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :WorkforceOver250 .
+#  --------------------------- Property 25-------------------------
+:totalWorkforce
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalWorkforce" ;
+    rdfs:domain :Industry ;
+    rdfs:range  :Workforce .
+#  --------------------------- Property 26-------------------------
+:totalSurveys
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalSurveys" ;
+    rdfs:domain :AllWorkforce ;
+    rdfs:range  :Surveys .
+#  --------------------------- Property 27-------------------------
+:totalTradingStatus
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalTradingStatus" ;
+    rdfs:domain :AllWorkforce ;
+    rdfs:range  :TradingStatus .
+#  --------------------------- Property 28-------------------------
+:totalAppliedForSchemess
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalAppliedForSchemess" ;
+    rdfs:domain :AllWorkforce ;
+    rdfs:range  :GovSchemessAppliedFor .
+#  --------------------------- Property 29-------------------------
+:totalReceivedSchemess
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalReceivedSchemess" ;
+    rdfs:domain :AllWorkforce ;
+    rdfs:range  :GovSchemeReceived .
+#  --------------------------- Property 30-------------------------
+:totalPlannedSchemess
+    rdf:type    owl:ObjectProperty ;
+    rdfs:label  "totalPlannedSchemess" ;
+    rdfs:domain :AllWorkforce ;
+    rdfs:range  :GovSchemesPlanned .
+###  Class Definitions (Number of Classes) 23 ###
+#  --------------------------- Class  0-------------------------
+:Industry
+    rdf:type   owl:Class ;
+    rdfs:label "Industry" .
+#  --------------------------- Class  1-------------------------
+:Surveys
+    rdf:type   owl:Class ;
+    rdfs:label "Surveys" .
+#  --------------------------- Class  2-------------------------
+:Sent
+    rdf:type   owl:Class ;
+    rdfs:label "Sent" .
+#  --------------------------- Class  3-------------------------
+:Responded
+    rdf:type   owl:Class ;
+    rdfs:label "Responded" .
+#  --------------------------- Class  4-------------------------
+:TradingStatus
+    rdf:type   owl:Class ;
+    rdfs:label "TradingStatus" .
+#  --------------------------- Class  5-------------------------
+:GovSchemes
+    rdf:type   owl:Class ;
+    rdfs:label "GovSchemes" .
+#  --------------------------- Class  6-------------------------
+:GovSchemesReceived
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :GovSchemes ;
+    rdfs:label      "GovSchemeReceived" .
+#  --------------------------- Class  7-------------------------
+:GovSchemesPlanned
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :GovSchemes ;
+    rdfs:label      "GovSchemesPlanned" .
+#  --------------------------- Class  8-------------------------
+:Country
+    rdf:type   owl:Class ;
+    rdfs:label "Country" .
+#  --------------------------- Class  9-------------------------
+:England
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Country ;
+    rdfs:label      "England" .
+#  --------------------------- Class  10-------------------------
+:Wales
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Country ;
+    rdfs:label      "Wales" .
+#  --------------------------- Class  11-------------------------
+:Scotland_
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Country ;
+    rdfs:label      "Scotland " .
+#  --------------------------- Class  12-------------------------
+:NorthernIreland
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Country ;
+    rdfs:label      "NorthernIreland" .
+#  --------------------------- Class  13-------------------------
+:UK
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Country ;
+    rdfs:label      "UK" .
+#  --------------------------- Class  14-------------------------
+:GovSchemesAppliedFor
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :GovSchemes ;
+    rdfs:label      "GovSchemesAppliedFor" .
+#  --------------------------- Class  15-------------------------
+:Workforce
+    rdf:type   owl:Class ;
+    rdfs:label "Workforce" .
+#  --------------------------- Class  16-------------------------
+:WorkforceOver250
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Workforce ;
+    rdfs:label      "WorkforceOver250" .
+#  --------------------------- Class  17-------------------------
+:WorkforceUnder250
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :Workforce ;
+    rdfs:label      "WorkforceUnder250" .
+#  --------------------------- Class  18-------------------------
+:AllWorkforce
+    rdf:type   owl:Class ;
+    rdfs:label "AllWorkforce" .
+#  --------------------------- Class  19-------------------------
+:AllWorkforce0-99
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :AllWorkforceUnder250 ;
+    rdfs:label      "AllWorkforce0-99" .
+#  --------------------------- Class  20-------------------------
+:AllWorkforce100-249
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :AllWorkforceUnder250 ;
+    rdfs:label      "AllWorkforce100-249" .
+#  --------------------------- Class  21-------------------------
+:AllWorkforceOver250
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :AllWorkforce ;
+    rdfs:label      "AllWorkforceOver250" .
+#  --------------------------- Class  22-------------------------
+:AllWorkforceUnder250
+    rdf:type        owl:Class ;
+    rdfs:subClassOf :AllWorkforce ;
+    rdfs:label      "AllWorkforce<250" .
