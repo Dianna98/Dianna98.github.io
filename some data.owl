@@ -1,0 +1,502 @@
+@prefix : <http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19> .
+
+<http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#allGovSchemesAppliedFor
+:allGovSchemesAppliedFor rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Workforce ;
+                         rdfs:range :GovSchemesAppliedFor .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#allGovSchemesPlanned
+:allGovSchemesPlanned rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Workforce ;
+                      rdfs:range :GovSchemesPlanned .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#allGovSchemesReceived
+:allGovSchemesReceived rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Workforce ;
+                       rdfs:range :GovSchemesReceived .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#allSurvey
+:allSurvey rdf:type owl:ObjectProperty ;
+           rdfs:domain :Workforce ;
+           rdfs:range :Surveys .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#allTrading
+:allTrading rdf:type owl:ObjectProperty ;
+            rdfs:domain :Workforce ;
+            rdfs:range :TradingStatus .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#govSchemesAppliedFor
+:govSchemesAppliedFor rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Country ;
+                      rdfs:range :GovSchemesAppliedFor .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#haveAppliedFor
+:haveAppliedFor rdf:type owl:ObjectProperty ;
+                rdfs:domain :Industry ;
+                rdfs:range :GovSchemesAppliedFor .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#haveAppliedForByWorkforce
+:haveAppliedForByWorkforce rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Workforce ;
+                           rdfs:range :GovSchemesAppliedFor .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#havePlanned
+:havePlanned rdf:type owl:ObjectProperty ;
+             rdfs:domain :Industry ;
+             rdfs:range :GovSchemesPlanned .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#havePlannedByWorkforce
+:havePlannedByWorkforce rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Workforce ;
+                        rdfs:range :GovSchemesPlanned .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#haveReceived
+:haveReceived rdf:type owl:ObjectProperty ;
+              rdfs:domain :Industry ;
+              rdfs:range :GovSchemesReceived .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#haveReceivedByWorkforce
+:haveReceivedByWorkforce rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Workforce ;
+                         rdfs:range :GovSchemesReceived .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#haveTradingStatus
+:haveTradingStatus rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Industry ;
+                   rdfs:range :TradingStatus ;
+                   rdfs:comment "Associates trading status data to an industry." .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#survey250AndOver
+:survey250AndOver rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :totalSurvey .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#surveyUnder250
+:surveyUnder250 rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :totalSurvey .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#totalSurvey
+:totalSurvey rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Industry ;
+             rdfs:range :Surveys .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#tradingByCountry
+:tradingByCountry rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Country ;
+                  rdfs:range :TradingStatus .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#accreditedFinanceAgreements
+:accreditedFinanceAgreements rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :GovSchemes ;
+                             rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#businessRatesHoliday
+:businessRatesHoliday rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :GovSchemes ;
+                      rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#coronavirusJobRetention
+:coronavirusJobRetention rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :GovSchemes ;
+                         rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#deferringVAT
+:deferringVAT rdf:type owl:DatatypeProperty ;
+              rdfs:domain :GovSchemes ;
+              rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#hmrcTimeToPay
+:hmrcTimeToPay rdf:type owl:DatatypeProperty ;
+               rdfs:domain :GovSchemes ;
+               rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#notApplied
+:notApplied rdf:type owl:DatatypeProperty ;
+            rdfs:domain :GovSchemes ;
+            rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#numberOfResponses
+:numberOfResponses rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Surveys ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#numberOfSurveysSentOut
+:numberOfSurveysSentOut rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Surveys ;
+                        rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#responseRate
+:responseRate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Surveys ;
+              rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#smallBusinessGrant
+:smallBusinessGrant rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :GovSchemes ;
+                    rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Accommodation_And_Food_Service_Activities
+:Accommodation_And_Food_Service_Activities rdf:type owl:Class ;
+                                           rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Administrative_And_Support_Service_Activities
+:Administrative_And_Support_Service_Activities rdf:type owl:Class ;
+                                               rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Arts_Entertainment_And_Recreation
+:Arts_Entertainment_And_Recreation rdf:type owl:Class ;
+                                   rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Construction
+:Construction rdf:type owl:Class ;
+              rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Country
+:Country rdf:type owl:Class ;
+         rdfs:comment "This class represents different regions from UK." .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Education
+:Education rdf:type owl:Class ;
+           rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Electricity_Gas_Steam_And_Air_Conditioning_Supply
+:Electricity_Gas_Steam_And_Air_Conditioning_Supply rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#England
+:England rdf:type owl:Class ;
+         rdfs:subClassOf :Country .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Financial_And_Insurance_Activities
+:Financial_And_Insurance_Activities rdf:type owl:Class ;
+                                    rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#GovSchemes
+:GovSchemes rdf:type owl:Class ;
+            rdfs:comment "This class represents the statistics for government schemes." .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#GovSchemesAppliedFor
+:GovSchemesAppliedFor rdf:type owl:Class ;
+                      rdfs:subClassOf :GovSchemes .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#GovSchemesPlanned
+:GovSchemesPlanned rdf:type owl:Class ;
+                   rdfs:subClassOf :GovSchemes .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#GovSchemesReceived
+:GovSchemesReceived rdf:type owl:Class ;
+                    rdfs:subClassOf :GovSchemes .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Human_Health_And_Social_Work_Activities
+:Human_Health_And_Social_Work_Activities rdf:type owl:Class ;
+                                         rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Industry
+:Industry rdf:type owl:Class ;
+          rdfs:comment "This class represents industries" .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Information_And_Communication
+:Information_And_Communication rdf:type owl:Class ;
+                               rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Manufacturing
+:Manufacturing rdf:type owl:Class ;
+               rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Mining_And_Quarrying
+:Mining_And_Quarrying rdf:type owl:Class ;
+                      rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#NorthernIreland
+:NorthernIreland rdf:type owl:Class ;
+                 rdfs:subClassOf :Country .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Other_Service_Activities
+:Other_Service_Activities rdf:type owl:Class ;
+                          rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Professional_Scientific_And_Technical_Activities
+:Professional_Scientific_And_Technical_Activities rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Real_Estate_Activities
+:Real_Estate_Activities rdf:type owl:Class ;
+                        rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Scotland
+:Scotland rdf:type owl:Class ;
+          rdfs:subClassOf :Country .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Surveys
+:Surveys rdf:type owl:Class ;
+         rdfs:comment "This class contains statistics for the number of surveys sent out and responded to." .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#TradingStatus
+:TradingStatus rdf:type owl:Class ;
+               rdfs:comment "This class represents the possible trading status an industry might have." .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Transportation_And_Storage
+:Transportation_And_Storage rdf:type owl:Class ;
+                            rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#UK
+:UK rdf:type owl:Class ;
+    rdfs:subClassOf :Country .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Wales
+:Wales rdf:type owl:Class ;
+       rdfs:subClassOf :Country .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Water_Supply_Sewerage_Waste_Management_And_Remediation_Activities
+:Water_Supply_Sewerage_Waste_Management_And_Remediation_Activities rdf:type owl:Class ;
+                                                                   rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Wholesale_And_Retail_Trade_Repair_Of_Motor_Vehicles_And_Motorcycles
+:Wholesale_And_Retail_Trade_Repair_Of_Motor_Vehicles_And_Motorcycles rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :Industry .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Workforce
+:Workforce rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Workforce0-99
+:Workforce0-99 rdf:type owl:Class ;
+               rdfs:subClassOf :WorkforceUnder250 ;
+               owl:disjointWith :Workforce100-249 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Workforce100-249
+:Workforce100-249 rdf:type owl:Class ;
+                  rdfs:subClassOf :WorkforceUnder250 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Workforce250AndOver
+:Workforce250AndOver rdf:type owl:Class ;
+                     rdfs:subClassOf :Workforce ;
+                     owl:disjointWith :WorkforceUnder250 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#WorkforceUnder250
+:WorkforceUnder250 rdf:type owl:Class ;
+                   rdfs:subClassOf :Workforce .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#All
+:All rdf:type owl:NamedIndividual ,
+              :Workforce ;
+     :allSurvey :SAll .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#All0-99
+:All0-99 rdf:type owl:NamedIndividual ,
+                  :Workforce0-99 ;
+         :allSurvey :SAll0-99 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#All100-249
+:All100-249 rdf:type owl:NamedIndividual ,
+                     :Workforce100-249 ;
+            :allSurvey :SAll100-249 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#AllOver
+:AllOver rdf:type owl:NamedIndividual ,
+                  :Workforce250AndOver ;
+         :allSurvey :SAllOver .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#AllUnder
+:AllUnder rdf:type owl:NamedIndividual ,
+                   :WorkforceUnder250 .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#Mining
+:Mining rdf:type owl:NamedIndividual ,
+                 :Mining_And_Quarrying ;
+        :survey250AndOver :MiningSWFbig ;
+        :surveyUnder250 :MiningSWFsmall ;
+        :totalSurvey :MiningSWFtotal .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#MiningSWFbig
+:MiningSWFbig rdf:type owl:NamedIndividual ,
+                       :Surveys ;
+              :numberOfResponses "0"^^xsd:int ;
+              :numberOfSurveysSentOut "13"^^xsd:int ;
+              :responseRate "0.0"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#MiningSWFsmall
+:MiningSWFsmall rdf:type owl:NamedIndividual ,
+                         :Surveys ;
+                :numberOfResponses "0"^^xsd:int ;
+                :numberOfSurveysSentOut "15"^^xsd:int ;
+                :responseRate "0.0"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#MiningSWFtotal
+:MiningSWFtotal rdf:type owl:NamedIndividual ,
+                         :Surveys ;
+                :numberOfResponses "0"^^xsd:int ;
+                :numberOfSurveysSentOut "28"^^xsd:int ;
+                :responseRate "0.0"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#SAll
+:SAll rdf:type owl:NamedIndividual ,
+               :Surveys ;
+      :numberOfResponses "6144"^^xsd:int ;
+      :numberOfSurveysSentOut "17623"^^xsd:int ;
+      :responseRate "34.7"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#SAll0-99
+:SAll0-99 rdf:type owl:NamedIndividual ,
+                   :Surveys ;
+          :numberOfResponses "357"^^xsd:int ;
+          :numberOfSurveysSentOut "1326"^^xsd:int ;
+          :responseRate "26.9"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#SAll100-249
+:SAll100-249 rdf:type owl:NamedIndividual ,
+                      :Surveys ;
+             :numberOfResponses "3452"^^xsd:int ;
+             :numberOfSurveysSentOut "9116"^^xsd:int ;
+             :responseRate "37.9"^^xsd:double .
+
+
+###  http://www.semanticweb.org/dac1u17/ontologies/business-impacts-of-covid-19#SAllOver
+:SAllOver rdf:type owl:NamedIndividual ,
+                   :Surveys ;
+          :numberOfResponses "2305"^^xsd:int ;
+          :numberOfSurveysSentOut "7181"^^xsd:int ;
+          :responseRate "32.1"^^xsd:double .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Accommodation_And_Food_Service_Activities
+                :Administrative_And_Support_Service_Activities
+                :Arts_Entertainment_And_Recreation
+                :Construction
+                :Education
+                :Electricity_Gas_Steam_And_Air_Conditioning_Supply
+                :Financial_And_Insurance_Activities
+                :Human_Health_And_Social_Work_Activities
+                :Information_And_Communication
+                :Manufacturing
+                :Mining_And_Quarrying
+                :Other_Service_Activities
+                :Professional_Scientific_And_Technical_Activities
+                :Real_Estate_Activities
+                :Transportation_And_Storage
+                :Water_Supply_Sewerage_Waste_Management_And_Remediation_Activities
+                :Wholesale_And_Retail_Trade_Repair_Of_Motor_Vehicles_And_Motorcycles
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :England
+                :NorthernIreland
+                :Scotland
+                :UK
+                :Wales
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :GovSchemesAppliedFor
+                :GovSchemesPlanned
+                :GovSchemesReceived
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
