@@ -284,10 +284,21 @@
 </ul>
 
 <p><strong>Open Data Modelling</strong></p>
-
+<p>The data modelling part of this project has been performed using Protégé. The ontology created is described in the
+    figure below. The chart was generated using WebVOWL.</p>
 <img src="business-impacts-of-covid-19-ontology.svg" alt="Ontology">
 
-<p style="text-align: left">The data modelling has been done using Protégé.</p>
+<p>The main classes extracted from the structure of the dataset are:</p>
+<ul>
+    <li>Industry &ndash; contains the respective subclasses for each industry; has various relationships with the other classes to assign different types of data to an industry.</li>
+    <li>Workforce &ndash; and subclasses for each workforce size band; has various relationships with the other classes to represent data for each workforce size category.</li>
+    <li>Surveys &ndash; contains data properties about the number of surveys sent out, received and the response rate.</li>
+    <li>TradingStatus &ndash; contains data properties about the percentage of the industry that continues to trade / have permanently ceased trading / have temporarily closed trading.</li>
+    <li>GovScheme &ndash; contains subclasses for the initiatives already applied for, initiatives received and for initiatives planned, and data properties for each initiative.</li>
+</ul>
+<p>Country &ndash; and the respective countries as subclasses; has links to trading status and government schemes applied for, in order to represent the data by country.</p>
+
+<p><strong>Files:</strong></p>
 <p style="text-align:left"><a href="business-impacts-of-covid-19-ontology">Ontology file</a>
 </p>
 <p style="text-align:left"><a href="business-impacts-of-covid-19">Linked Data file</a>
